@@ -1,2 +1,0 @@
-# iceyval.github.io-
-# HEHEHEHEAHWSHWHBHAWUEFYUEGFU
