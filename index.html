@@ -57,10 +57,15 @@ a.active,a:hover {
   transition: .5s;
 }
 
+body.light {
+    --background-color: rgb(83, 82, 82);
+  }
+:root body.dark {
+  --background-color: rgb(255,255,255);
+}
 body {
-    background-color: rgb(83, 82, 82);
-    }
-    
+  background-color: var(--background-color);
+}
 h2 {
     color: white;
     margin-left: 40px;
