@@ -1,10 +1,11 @@
-highlight();
-window.refresh = function(a)
-{
-    if(typeof(a) == 'undefined' || typeof(a.content) == 'undefined')
-        console.error("undefined");
+$(function () {
     highlight();
-}
+    window.refresh = function(a)
+    {
+        if(typeof(a) == 'undefined' || typeof(a.content) == 'undefined')
+            console.error("undefined");
+        highlight();
+    }
     function highlight() {
         $('pre code').each(function (i, block) {
           hljs.highlightBlock(block);
@@ -43,7 +44,7 @@ window.refresh = function(a)
           block.innerHTML = lines.join('\n');
         });
       }
-    
+    });
 
 if(document.body)
 {
