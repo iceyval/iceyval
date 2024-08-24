@@ -5,8 +5,6 @@ window.refresh = function(a)
         console.error("undefined");
     highlight();
 }
-function highlight()
-{
     function highlight() {
         $('pre code').each(function (i, block) {
           hljs.highlightBlock(block);
@@ -46,7 +44,7 @@ function highlight()
         });
       }
     
-}
+
 if(document.body)
 {
     function set_theme(theme)
