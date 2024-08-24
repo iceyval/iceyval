@@ -25,4 +25,7 @@
   .hljs {
     color: var(--color-foreground);
   }
+code {
+    color: #ffffff;
+}
   
