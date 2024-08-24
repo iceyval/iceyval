@@ -9,3 +9,20 @@
 .hljs-addition{color:#55a532;background-color:#eaffea}
 .hljs-deletion{color:#bd2c00;background-color:#ffecec}
 .hljs-link{text-decoration:underline}
+.hljs {
+    display: inline;
+    background-color: inherit;
+    padding: 0;
+  }
+  .hljs-keyword {
+    color: rgb(86,156,214);
+  }
+  
+  .hljs-string {
+    color: rgb(214, 157, 133);
+  }
+
+  .hljs {
+    color: var(--color-foreground);
+  }
+  
