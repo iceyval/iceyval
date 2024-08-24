@@ -52,16 +52,17 @@ a.active,a:hover {
 }
 body.light {
   --background-color: rgb(255,255,255);
+  --foreground-color: rgb(0,0,0);
 }
 :root,body.dark {
     --background-color: rgb(83, 82, 82);
+    --foreground-color: rgb(255,255,255);
   }
 body {
   background-color: var(--background-color);
 }
 h2 {
-    color: white;
-    margin-left: 80px;
+    color: var(--foreground-color);
     }
 
 a {
