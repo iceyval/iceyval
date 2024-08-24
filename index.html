@@ -93,7 +93,41 @@ a {
 
 <Body>
   <h2>Welcome to the offical Iceyval Website!</h2>
-  
+  <pre><code class="lang-sh hljs bash">#!/bin/bash
+
+    helpFunction()
+    {
+       echo &quot;&quot;
+       echo &quot;Usage: $0 -i &lt;ISO&gt; -m &lt;memory size&gt; -h &lt;hdd image&gt;&quot;
+       echo &quot;\t-i ISO path to be used&quot;
+       echo &quot;\t-m Memory size to allocate to the Virtual Machine&quot;
+       echo &quot;\t-h Hard disk image location, can be created with qemu-img&quot;
+       exit 1 # Exit script after printing help
+    }
+    
+    while getopts &quot;i:m:h:&quot; opt
+    do
+       case &quot;$opt&quot; in
+          i ) ISO=&quot;$OPTARG&quot; ;;
+          m ) MEMORY_SIZE=&quot;$OPTARG&quot; ;;
+          h ) HDD_IMAGE=&quot;$OPTARG&quot; ;;
+          ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
+       esac
+    done
+    
+    # Print helpFunction in case parameters are empty
+    if [ -z &quot;$ISO&quot; ] || [ -z &quot;$MEMORY_SIZE&quot; ] || [ -z &quot;$HDD_IMAGE&quot; ]
+    then
+       echo &quot;Some or all of the parameters are empty&quot;;
+       helpFunction
+    fi
+    
+    # Build the project
+    dotnet build
+    
+    # Emulate the ISO
+    qemu-system-x86_64 -boot d -cdrom $ISO -m $MEMORY_SIZE -hda $HDD_IMAGE
+    </code></pre>
 
   
 </Body>
